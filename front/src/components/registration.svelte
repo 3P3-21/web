@@ -3,7 +3,8 @@
     let email = "";
     let password = "";
     let Name = "";
-    let SecondName = "";
+    let firstName = "";
+    let lastName = "";
     function handleSubmits() {
       console.log("Email:", email);
       console.log("Password:", password);
@@ -34,8 +35,8 @@
 <div class="all">
 <div class="form-container">
     <h2>Регистрация</h2>
-    <input type="name" bind:value={email} placeholder="Имя" />
-    <input type="password" bind:value={password} placeholder="Фамилия" />
+    <input type="text" bind:value={firstName} placeholder="Имя" />
+    <input type="text" bind:value={lastName} placeholder="Фамилия" />
     <input type="email" bind:value={email} placeholder="Электронная почта" />
     <input type="password" bind:value={password} placeholder="Пароль" />
     <button class="exit" on:click={handleSubmits}>Войти</button>
