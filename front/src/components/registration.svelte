@@ -2,42 +2,44 @@
     
     let email = "";
     let password = "";
-    function handleSubmit() {
+    let Name = "";
+    let firstName = "";
+    let lastName = "";
+    function handleSubmits() {
       console.log("Email:", email);
       console.log("Password:", password);
+      console.log("Name:", Name);
+      console.log("SecondName:", SecondName);
     }
    
 
-<<<<<<< HEAD
-  function goToOtherPage() {
-    window.location.href = 'http://localhost:58467'; 
-  }
+//     import { goto } from 'svelte-routing';
 
 
-=======
->>>>>>> d52b86f564f1f50ee45aae772cb78e92545f9b60
-    
+
+//   function navigateToFirst() {
+//     goto('./addfirstlist.svelte');
+  //}
+
   </script>
 <header class="headerfirst">
     <div class="logo">
-   <img src="images/logo.png" alt=""/>
+   <img src="" alt=""/>
     <div class="title">SuperJournal</div>
     </div>
     <div class="buttons">
-      <button class="exit" on:click={() => goto("/")}>Войти</button>
-<<<<<<< HEAD
-      <button class="registration" on:click={goToOtherPage}>Регистрация</button>
-=======
-      <button class="registration" on:click={() => goto('/registration')}>Регистрация</button>
->>>>>>> d52b86f564f1f50ee45aae772cb78e92545f9b60
+      <button class="exit" on:click={() => console.log("Войти")}>Войти</button>
+      <button class="registration" on:click={handleSubmits}>Регистрация</button>
     </div>
 </header>
 <div class="all">
 <div class="form-container">
-    <h2>Авторизация</h2>
+    <h2>Регистрация</h2>
+    <input type="text" bind:value={firstName} placeholder="Имя" />
+    <input type="text" bind:value={lastName} placeholder="Фамилия" />
     <input type="email" bind:value={email} placeholder="Электронная почта" />
     <input type="password" bind:value={password} placeholder="Пароль" />
-    <button class="exit" on:click={handleSubmit}>Войти</button>
+    <button class="exit" on:click={handleSubmits}>Войти</button>
   </div>
  
 </div>
@@ -126,9 +128,10 @@
       
       display: flex;
     }
-    .registration{  
+    .registration{
+       
     width: 130px; 
-    height: 36px;
+    height: 30px;
     border: 2px solid var(--primary-color2); 
     border-radius: 25px; 
     background-color: transparent;
@@ -136,10 +139,11 @@
     color: var(--primary-color2);
 
     }
+
     .exit{
         color: var(--primary-color);
         width: 80px; 
-        height: 36px; 
+        height: 30px; 
         background-color: var(--primary-color2);
         border-radius: 30%;
         border-radius: 25px;
